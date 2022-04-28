@@ -11,6 +11,7 @@ import Firebase
 class LoginViewController: UIViewController {
 
     let segueId = "tasksSegue"
+    var ref: DatabaseReference!
     
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var logintextField: UITextField!
@@ -18,6 +19,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference(withPath: "users")
         // скролл над клавиатурой. чтобы не скрывала кнопки
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
@@ -86,16 +89,13 @@ class LoginViewController: UIViewController {
             return
         }
         
-        Auth.auth().createUser(withEmail: login, password: password) { (user, error) in
-            if error != nil {
-                if user != nil {
-                   
-                } else {
-                    print("user is not created")
-                }
-            } else {
-                print(error?.localizedDescription)
+        Auth.auth().createUser(withEmail: login, password: password) { [weak self] (user, error) in
+            guard error == nil, user != nil else {
+                print(error!.localizedDescription)
+                return
             }
+            let userRef = self?.ref.child((user?.user.uid)!)
+            userRef?.setValue(["email": user?.user.email])
 
         }
     }
