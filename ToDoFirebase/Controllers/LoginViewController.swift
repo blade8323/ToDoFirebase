@@ -18,12 +18,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // скролл над клавиатурой. чтобы не скрывала кнопки
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(kbDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         
         warningLabel.alpha = 0
-        
+        //проверка авторизации,автоматический вход
         Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
             if user != nil {
                 self?.performSegue(withIdentifier: (self?.segueId)!, sender: nil)
@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // зачистка полей ввода логопаса при разлогинивании
         logintextField.text = ""
         passwordtextField.text = ""
     }
@@ -93,7 +94,7 @@ class LoginViewController: UIViewController {
                     print("user is not created")
                 }
             } else {
-                print(error!.localizedDescription)
+                print(error?.localizedDescription)
             }
 
         }

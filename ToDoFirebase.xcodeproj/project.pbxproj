@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2402210C281A7A340044DB80 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2402210B281A7A340044DB80 /* User.swift */; };
+		2402210E281A80300044DB80 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2402210D281A80300044DB80 /* Task.swift */; };
 		241BECA8280886A5009E3E60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241BECA7280886A5009E3E60 /* AppDelegate.swift */; };
 		241BECAA280886A5009E3E60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241BECA9280886A5009E3E60 /* SceneDelegate.swift */; };
 		241BECAC280886A5009E3E60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241BECAB280886A5009E3E60 /* LoginViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2402210B281A7A340044DB80 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2402210D281A80300044DB80 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		241BECA4280886A5009E3E60 /* ToDoFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		241BECA7280886A5009E3E60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		241BECA9280886A5009E3E60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +50,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2402210A281A7A0A0044DB80 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2402210B281A7A340044DB80 /* User.swift */,
+				2402210D281A80300044DB80 /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		241BEC9B280886A5009E3E60 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +80,7 @@
 		241BECA6280886A5009E3E60 /* ToDoFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				2402210A281A7A0A0044DB80 /* Models */,
 				241BECBC2808870D009E3E60 /* Supporting files */,
 				241BECBB280886C2009E3E60 /* Controllers */,
 				241BECB5280886A7009E3E60 /* Info.plist */,
@@ -102,7 +116,6 @@
 				BA3E4F0F7AB1F93EDDF3EC2E /* Pods-ToDoFirebase.debug.xcconfig */,
 				9FC5388E49BBFADE35AC3E25 /* Pods-ToDoFirebase.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -233,6 +246,8 @@
 				241BECAC280886A5009E3E60 /* LoginViewController.swift in Sources */,
 				241BECBE28088EFC009E3E60 /* TasksViewController.swift in Sources */,
 				241BECA8280886A5009E3E60 /* AppDelegate.swift in Sources */,
+				2402210C281A7A340044DB80 /* User.swift in Sources */,
+				2402210E281A80300044DB80 /* Task.swift in Sources */,
 				241BECAA280886A5009E3E60 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
